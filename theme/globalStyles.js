@@ -28,4 +28,7 @@ export const GlobalStyles = createGlobalStyle`
     html::-webkit-scrollbar-thumb{
         background:${({ theme }) => theme.default.selection};
     };
+    body{
+        background:${({ theme }) => theme.default.background};
+    };
 `;
