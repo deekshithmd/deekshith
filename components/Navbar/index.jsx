@@ -32,7 +32,7 @@ export default function Navbar({ showMobileMenu }) {
               <MenuItem href="#">Skills</MenuItem>
             </ListItem>
             <ListItem>
-              <MenuItem href="#">Experience</MenuItem>
+              <MenuItem href="/education">Education</MenuItem>
             </ListItem>
             <ListItem>
               <MenuItem href="/contact">Contact</MenuItem>
