@@ -26,7 +26,7 @@ export default function Navbar({ showMobileMenu }) {
               <MenuItem href="/about">About</MenuItem>
             </ListItem>
             <ListItem>
-              <MenuItem href="#">Projects</MenuItem>
+              <MenuItem href="/projects">Projects</MenuItem>
             </ListItem>
             <ListItem>
               <MenuItem href="#">Skills</MenuItem>
