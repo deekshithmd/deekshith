@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { H1, H3, Span } from "@/styles/SharedStyling";
+import { H1, H3, Span, Button } from "@/styles/SharedStyling";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -98,21 +98,6 @@ const Container = styled.div`
   @media (max-width: 981px) {
     margin-left: 0;
     padding: 0 2rem;
-  }
-`;
-
-const Button = styled.button`
-  padding: 0.7rem 3rem;
-  background: #333;
-  color: #fff;
-  cursor: pointer;
-  margin-top: 1rem;
-  font-size: 2rem;
-  border-radius: 5rem;
-  display: flex;
-  align-items: center;
-  &:hover {
-    background: #f9ca24;
   }
 `;
 

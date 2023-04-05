@@ -19,3 +19,19 @@ export const Span = styled.span`
   font-size: ${(props) => props.fontSize || "16px"};
   color: ${(props) => props.color || "#000"};
 `;
+
+export const Button = styled.button`
+  padding: 0.7rem 3rem;
+  background: #333;
+  color: #fff;
+  cursor: pointer;
+  margin-top: 1rem;
+  font-size: 2rem;
+  border-radius: 5rem;
+  display: flex;
+  align-items: center;
+  margin-right:${(props) => props.marginRight || "0px"}
+  &:hover {
+    background: #f9ca24;
+  }
+`;
