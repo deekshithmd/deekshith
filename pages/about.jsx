@@ -1,13 +1,15 @@
-import styled from "styled-components";
+import styled, { useTheme } from "styled-components";
 import { H1, H3, Span, Button } from "@/styles/SharedStyling";
 import Link from "next/link";
 import Image from "next/image";
 
 const About = () => {
+  const theme = useTheme();
+
   return (
     <Container>
       <Header>
-        <span style={{ color: "#f9ca24" }}>About</span> me
+        <span style={{ color: theme.default.selected }}>About</span> me
       </Header>
       <DataRow>
         <Info>
