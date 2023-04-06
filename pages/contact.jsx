@@ -1,9 +1,35 @@
+import React from "react";
 import styled from "styled-components";
-import { H1, H3, Span, Button } from "@/styles/SharedStyling";
-import Link from "next/link";
+import { H1, H3, Button } from "@/styles/SharedStyling";
 import Image from "next/image";
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
+  const sendEmail = (event) => {
+    event.preventDefault();
+    const { name, email, message } = event.target.elements;
+
+    const templateParams = {
+      from_name: name.value,
+      to_name: "Deekshith M D",
+      message: message.value,
+    };
+    emailjs
+      .send(
+        "service_bwfwfjb",
+        "template_gxju0g5",
+        templateParams,
+        "VXfq7H_2G3ps184-E"
+      )
+      .then(
+        (response) => {
+          console.log("SUCCESS!", response.status, response.text);
+        },
+        (err) => {
+          console.log("FAILED...", err);
+        }
+      );
+  };
   return (
     <Container>
       <Header>
@@ -32,14 +58,12 @@ const Contact = () => {
             </ContactData>
           </Info>
         </ContactInfo>
-        <Form>
-          <Input type="text" placeholder="name" />
+        <Form onSubmit={sendEmail}>
+          <Input type="text" placeholder="name" id="name" />
 
-          <Input type="email" placeholder="email" />
+          <Input type="email" placeholder="email" id="email" />
 
-          <Input type="text" placeholder="project" />
-
-          <Message name="" id="" cols="30" rows="10" placeholder="messaage" />
+          <Message id="message" cols="30" rows="10" placeholder="messaage" />
 
           <Button type="submit">
             Send
@@ -48,7 +72,7 @@ const Contact = () => {
               height={30}
               width={30}
               alt="mail"
-              paddingLeft="10px"
+              paddingleft="10px"
             />
           </Button>
         </Form>
@@ -106,7 +130,7 @@ const Info = styled.div``;
 
 const Icon = styled(Image)`
   padding-right: 1rem;
-  padding-left: ${(props) => props.paddingLeft || "0px"};
+  padding-left: ${(props) => props.paddingleft || "0px"};
 `;
 
 const ContactData = styled(H3)`
@@ -134,7 +158,7 @@ const Input = styled.input`
   margin: 1rem 0;
   background: #3333;
   color: #fff;
-  text-transform: non;
+  text-transform: none;
   font-size: 1.7rem;
   width: 100%;
   &::placeholder {
