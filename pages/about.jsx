@@ -53,22 +53,6 @@ const About = () => {
               Projects
             </H3>
           </Box>
-          <Box>
-            <Span fontSize="4rem" color="#f9ca24">
-              10+
-            </Span>
-            <H3 fontSize="2rem" color="#f9ca24">
-              Projects
-            </H3>
-          </Box>
-          <Box>
-            <Span fontSize="4rem" color="#f9ca24">
-              10+
-            </Span>
-            <H3 fontSize="2rem" color="#f9ca24">
-              Projects
-            </H3>
-          </Box>
         </BoxContainer>
       </DataRow>
     </Container>

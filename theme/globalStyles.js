@@ -12,7 +12,7 @@ export const GlobalStyles = createGlobalStyle`
         transition: all .2s linear;
     };
     *::selection{
-        background:${({ theme }) => theme.default.selection};
+        background:${({ theme }) => theme.default.selected};
         color:#333;
     };
     html{
@@ -26,7 +26,7 @@ export const GlobalStyles = createGlobalStyle`
         background:#222;
     };
     html::-webkit-scrollbar-thumb{
-        background:${({ theme }) => theme.default.selection};
+        background:${({ theme }) => theme.default.selected};
     };
     body{
         background:${({ theme }) => theme.default.background};

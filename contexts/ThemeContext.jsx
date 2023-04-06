@@ -3,7 +3,7 @@ import React from "react";
 const ThemeContext = React.createContext();
 
 const ThemeProvider = ({ children }) => {
-  const [isDarkTheme, setDarkTheme] = React.useState(false);
+  const [isDarkTheme, setDarkTheme] = React.useState(true);
 
   const toggleTheme = () => {
     if (isDarkTheme) {
@@ -16,7 +16,6 @@ const ThemeProvider = ({ children }) => {
   };
 
   React.useEffect(() => {
-    console.log("theme", sessionStorage.getItem("dark"));
     if (sessionStorage.getItem("dark")) {
       setDarkTheme(true);
     } else {

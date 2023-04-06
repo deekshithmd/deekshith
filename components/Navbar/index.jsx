@@ -29,7 +29,7 @@ export default function Navbar({ showMobileMenu }) {
               <MenuItem href="/projects">Projects</MenuItem>
             </ListItem>
             <ListItem>
-              <MenuItem href="#">Skills</MenuItem>
+              <MenuItem href="/skills">Skills</MenuItem>
             </ListItem>
             <ListItem>
               <MenuItem href="/education">Education</MenuItem>
@@ -59,6 +59,7 @@ const HeaderContainer = styled.header`
   text-align: center;
   @media (max-width: 981px) {
     left: ${(props) => (props.showMobileMenu ? "0" : " -120%")};
+    transition: all 0.5s;
   }
   @media (max-width: 480px) {
     width: 100vw;

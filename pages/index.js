@@ -19,7 +19,7 @@ export default function Home() {
           I am a front end developer experienced in developing front end
           solutions using HTML,CSS,Javascipt{" "}
         </Description>
-        <Link href="/contact">
+        <Link href="/about">
           <Button>
             About Me
             <Image

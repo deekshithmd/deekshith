@@ -1,6 +1,5 @@
 import styled from "styled-components";
-import { H1, H3, Span } from "@/styles/SharedStyling";
-import Link from "next/link";
+import { H1 } from "@/styles/SharedStyling";
 import Image from "next/image";
 
 const Projects = () => {

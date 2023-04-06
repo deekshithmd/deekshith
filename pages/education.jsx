@@ -4,108 +4,43 @@ import Link from "next/link";
 import Image from "next/image";
 
 const Education = () => {
+  const eductionData = [
+    {
+      year: 2022,
+      course: "Front End Development",
+      description:
+        "Joined web development bootcamp called neogCamp to learn fullstack web development and got specialized in frontend development using ReactJS",
+    },
+    {
+      year: 2020,
+      course: "B.E(CSE)",
+      description:
+        "Completed Bachelor of Engineering in Computer Science and Engineering with 8.95 CGPA",
+    },
+  ];
   return (
     <Container>
       <Header>
         <span style={{ color: "#f9ca24" }}>My</span> Education
       </Header>
       <BoxContainer>
-        <Box>
-          <ImageContainer>
-            <Image
-              src="/assets/graduate.png"
-              height={30}
-              width={30}
-              alt="icon"
-            />
-          </ImageContainer>
-          <Year>2016</Year>
-          <Course>Front End Development</Course>
-          <Description>
-            Completed frontend develope=ment bootcamp to learn web development
-            to get job in industry
-          </Description>
-        </Box>
-        <Box>
-          <ImageContainer>
-            <Image
-              src="/assets/graduate.png"
-              height={30}
-              width={30}
-              alt="icon"
-            />
-          </ImageContainer>
-          <Year>2016</Year>
-          <Course>Front End Development</Course>
-          <Description>
-            Completed frontend develope=ment bootcamp to learn web development
-            to get job in industry
-          </Description>
-        </Box>
-        <Box>
-          <ImageContainer>
-            <Image
-              src="/assets/graduate.png"
-              height={30}
-              width={30}
-              alt="icon"
-            />
-          </ImageContainer>
-          <Year>2016</Year>
-          <Course>Front End Development</Course>
-          <Description>
-            Completed frontend develope=ment bootcamp to learn web development
-            to get job in industry
-          </Description>
-        </Box>
-        <Box>
-          <ImageContainer>
-            <Image
-              src="/assets/graduate.png"
-              height={30}
-              width={30}
-              alt="icon"
-            />
-          </ImageContainer>
-          <Year>2016</Year>
-          <Course>Front End Development</Course>
-          <Description>
-            Completed frontend develope=ment bootcamp to learn web development
-            to get job in industry
-          </Description>
-        </Box>
-        <Box>
-          <ImageContainer>
-            <Image
-              src="/assets/graduate.png"
-              height={30}
-              width={30}
-              alt="icon"
-            />
-          </ImageContainer>
-          <Year>2016</Year>
-          <Course>Front End Development</Course>
-          <Description>
-            Completed frontend develope=ment bootcamp to learn web development
-            to get job in industry
-          </Description>
-        </Box>
-        <Box>
-          <ImageContainer>
-            <Image
-              src="/assets/graduate.png"
-              height={30}
-              width={30}
-              alt="icon"
-            />
-          </ImageContainer>
-          <Year>2016</Year>
-          <Course>Front End Development</Course>
-          <Description>
-            Completed frontend develope=ment bootcamp to learn web development
-            to get job in industry
-          </Description>
-        </Box>
+        {eductionData.map((education, index) => {
+          return (
+            <Box key={index}>
+              <ImageContainer>
+                <Image
+                  src="/assets/graduate.png"
+                  height={30}
+                  width={30}
+                  alt="icon"
+                />
+              </ImageContainer>
+              <Year>{education.year}</Year>
+              <Course>{education.course}</Course>
+              <Description>{education.description}</Description>
+            </Box>
+          );
+        })}
       </BoxContainer>
     </Container>
   );
