@@ -4,40 +4,42 @@ import styled, { useTheme } from "styled-components";
 import Link from "next/link";
 import { H3 } from "@/styles/SharedStyling";
 
-export default function Navbar({ showMobileMenu }) {
+export default function Navbar({ showMobileMenu, setShowMobileMenu }) {
   const theme = useTheme();
+  const paths = [
+    { link: "/about", name: "About" },
+    { link: "/projects", name: "Projects" },
+    { link: "/skills", name: "Skills" },
+    { link: "/education", name: "Education" },
+    { link: "/contact", name: "Contact" },
+  ];
   return (
     <main>
       <HeaderContainer showMobileMenu={showMobileMenu}>
         <ProfileContainer>
-          <ProfilImage>
+          <ProfileImage>
             <Image
               src="/assets/deekshith.png"
               alt="Profile"
               layout="fill"
               objectFit="contain"
             />
-          </ProfilImage>
+          </ProfileImage>
           <Name>Deekshith M D</Name>
           <Post>Front End Developer</Post>
         </ProfileContainer>
         <NavigationBar>
           <ListContainer>
-            <ListItem>
-              <MenuItem href="/about">About</MenuItem>
-            </ListItem>
-            <ListItem>
-              <MenuItem href="/projects">Projects</MenuItem>
-            </ListItem>
-            <ListItem>
-              <MenuItem href="/skills">Skills</MenuItem>
-            </ListItem>
-            <ListItem>
-              <MenuItem href="/education">Education</MenuItem>
-            </ListItem>
-            <ListItem>
-              <MenuItem href="/contact">Contact</MenuItem>
-            </ListItem>
+            {paths.map((item, index) => {
+              return (
+                <ListItem
+                  key={index}
+                  onClick={() => setShowMobileMenu(!showMobileMenu)}
+                >
+                  <MenuItem href={item.link}>{item.name}</MenuItem>
+                </ListItem>
+              );
+            })}
           </ListContainer>
         </NavigationBar>
       </HeaderContainer>
@@ -74,7 +76,7 @@ const ProfileContainer = styled.div`
   align-items: center;
 `;
 
-const ProfilImage = styled.div`
+const ProfileImage = styled.div`
   position: relative;
   height: 17rem;
   width: 17rem;
@@ -82,7 +84,7 @@ const ProfilImage = styled.div`
   margin-bottom: 1rem;
   border: 0.7rem solid ${(props) => props.theme.default.selected};
   overflow: hidden;
-  box-shadow: 15px 15px 15px #888888;
+  box-shadow: ${(props) => props.theme.default.profileShadow};
 `;
 
 const Name = styled(H3)`
@@ -114,6 +116,7 @@ const MenuItem = styled(Link)`
   color: ${(props) => props.theme.default.color};
   font-size: 2rem;
   border-radius: 5rem;
+  box-shadow: ${(props) => props.theme.default.boxShadow};
   &:hover {
     background: ${(props) => props.theme.default.selected};
   }

@@ -98,6 +98,7 @@ const Year = styled(Span)`
   color: ${(props) => props.theme.default.color};
   border-radius: 5rem;
   padding: 0.5rem 2.5rem;
+  box-shadow: ${(props) => props.theme.default.boxInsetShadow};
 `;
 
 const Course = styled(H3)`

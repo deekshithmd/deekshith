@@ -93,6 +93,7 @@ const Box = styled.div`
   text-align: center;
   padding: 2rem;
   margin: 2rem;
+  box-shadow: ${(props) => props.theme.default.boxInsetShadow};
   @media (max-width: 480px) {
     width: 100%;
   }

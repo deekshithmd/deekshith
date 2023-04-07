@@ -10,7 +10,10 @@ const Layout = ({ children }) => {
   const [showMobileMenu, setShowMobileMenu] = React.useState(false);
   return (
     <Container>
-      <Navbar showMobileMenu={showMobileMenu} />
+      <Navbar
+        showMobileMenu={showMobileMenu}
+        setShowMobileMenu={setShowMobileMenu}
+      />
       <MenuContainer onClick={() => setShowMobileMenu(!showMobileMenu)}>
         <Image
           src={showMobileMenu ? "/assets/close.png" : "/assets/menu.png"}

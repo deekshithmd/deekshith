@@ -30,8 +30,10 @@ export const Button = styled.button`
   border-radius: 5rem;
   display: flex;
   align-items: center;
-  margin-right:${(props) => props.marginRight || "0px"}
+  margin-right: ${(props) => props.marginRight || "0px"};
+  box-shadow: ${(props) => props.theme.default.boxShadow},
+    ${(props) => props.theme.default.boxInsetShadow};
   &:hover {
-    background: ${(props) => props.theme.default.selected};;
+    background: ${(props) => props.theme.default.selected};
   }
 `;

@@ -1,18 +1,19 @@
 import Head from "next/head";
-import styled from "styled-components";
-import { H1, H3 } from "@/styles/SharedStyling";
+import styled, { useTheme } from "styled-components";
+import { H1, H3, Button } from "@/styles/SharedStyling";
 import Link from "next/link";
 import Image from "next/image";
 
 export default function Home() {
+  const theme = useTheme();
   return (
     <>
       <Head></Head>
       <Container>
-        <H3 fontSize="2.5rem" color="#fff">
+        <H3 fontSize="2.5rem" color={theme.default.color}>
           Hi There...
         </H3>
-        <H1 fontSize="5rem" color="#fff">
+        <H1 fontSize="5rem" color={theme.default.color}>
           I am <span style={{ color: "#f9ca24" }}>Deekshith M D</span>
         </H1>
         <Description>
@@ -43,7 +44,7 @@ const Container = styled.div`
   justify-content: center;
   flex-flow: column;
   padding: 0 15rem;
-  background: #111;
+  background: ${(props) => props.theme.default.background};
   @media (max-width: 981px) {
     margin-left: 0;
     padding: 0 2rem;
@@ -52,21 +53,6 @@ const Container = styled.div`
 
 const Description = styled.p`
   font-size: 2rem;
-  color: #eee;
+  color: ${(props) => props.theme.default.heading};
   padding: 1rem 0rem;
-`;
-
-const Button = styled.button`
-  padding: 0.7rem 3rem;
-  background: #333;
-  color: #fff;
-  cursor: pointer;
-  margin-top: 1rem;
-  font-size: 2rem;
-  border-radius: 5rem;
-  display: flex;
-  align-items: center;
-  &:hover {
-    background: #f9ca24;
-  }
 `;
