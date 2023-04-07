@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import styled, { useTheme } from "styled-components";
 import Link from "next/link";
+import { H3 } from "@/styles/SharedStyling";
 
 export default function Navbar({ showMobileMenu }) {
   const theme = useTheme();
@@ -51,7 +52,7 @@ const HeaderContainer = styled.header`
   z-index: 100;
   height: 100%;
   width: 35rem;
-  background: #1a1a1a;
+  background: ${(props) => props.theme.default.sidebarBackground};
   display: flex;
   align-items: center;
   justify-content: center;
@@ -79,18 +80,19 @@ const ProfilImage = styled.div`
   width: 17rem;
   border-radius: 50%;
   margin-bottom: 1rem;
-  border: 0.7rem solid #f9ca24;
+  border: 0.7rem solid ${(props) => props.theme.default.selected};
   overflow: hidden;
+  box-shadow: 15px 15px 15px #888888;
 `;
 
-const Name = styled.h3`
+const Name = styled(H3)`
   font-size: 3.5rem;
-  color: #fff;
+  color: ${(props) => props.theme.default.color};
 `;
 
 const Post = styled.p`
   font-size: 2rem;
-  color: #eee;
+  color: ${(props) => props.theme.default.heading};
 `;
 
 const NavigationBar = styled.nav`
@@ -108,11 +110,11 @@ const MenuItem = styled(Link)`
   display: block;
   padding: 1rem;
   margin: 1.5rem 0;
-  background: #333;
-  color: #fff;
+  background: ${(props) => props.theme.default.secondaryBackground};
+  color: ${(props) => props.theme.default.color};
   font-size: 2rem;
   border-radius: 5rem;
   &:hover {
-    background: #f9ca24;
+    background: ${(props) => props.theme.default.selected};
   }
 `;

@@ -1,8 +1,9 @@
-import styled from "styled-components";
+import styled, { useTheme } from "styled-components";
 import { H1 } from "@/styles/SharedStyling";
 import Image from "next/image";
 
 const Skills = () => {
+  const theme = useTheme();
   const skillSet = [
     {
       skill: "HTML",
@@ -44,7 +45,7 @@ const Skills = () => {
   return (
     <Container>
       <Header>
-        <span style={{ color: "#f9ca24" }}>My</span> Skills
+        <span style={{ color: theme.default.selected }}>My</span> Skills
       </Header>
       <BoxContainer>
         {skillSet.map((skill, index) => {
@@ -66,7 +67,7 @@ const Container = styled.div`
   justify-content: center;
   flex-flow: column;
   padding: 0 2rem;
-  background: #111;
+  background: ${(props) => props.theme.default.background};
   @media (max-width: 981px) {
     justify-content: flex-start;
     margin-left: 0;
@@ -81,8 +82,8 @@ const Header = styled(H1)`
   margin: 0 6rem;
   font-size: 4rem;
   padding: 1rem;
-  border-bottom: 0.1rem solid #fff4;
-  color: #fff;
+  border-bottom: 0.1rem solid ${(props) => props.theme.default.border};
+  color: ${(props) => props.theme.default.color};
   @media (max-width: 480px) {
     margin: 0 3rem;
   }

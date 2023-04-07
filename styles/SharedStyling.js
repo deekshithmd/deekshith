@@ -22,8 +22,8 @@ export const Span = styled.span`
 
 export const Button = styled.button`
   padding: 0.7rem 3rem;
-  background: #333;
-  color: #fff;
+  background: ${(props) => props.theme.default.secondaryBackground};
+  color: ${(props) => props.theme.default.color};
   cursor: pointer;
   margin-top: 1rem;
   font-size: 2rem;
@@ -32,6 +32,6 @@ export const Button = styled.button`
   align-items: center;
   margin-right:${(props) => props.marginRight || "0px"}
   &:hover {
-    background: #f9ca24;
+    background: ${(props) => props.theme.default.selected};;
   }
 `;

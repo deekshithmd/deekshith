@@ -1,13 +1,14 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { useTheme } from "styled-components";
 import { H1, H3, Button } from "@/styles/SharedStyling";
 import Image from "next/image";
 import emailjs from "@emailjs/browser";
 
 const Contact = () => {
+  const theme = useTheme();
   const sendEmail = (event) => {
     event.preventDefault();
-    const { name, email, message } = event.target.elements;
+    const { name, message } = event.target.elements;
 
     const templateParams = {
       from_name: name.value,
@@ -33,7 +34,7 @@ const Contact = () => {
   return (
     <Container>
       <Header>
-        <span style={{ color: "#f9ca24" }}>Contact</span> me
+        <span style={{ color: theme.default.selected }}>Contact</span> me
       </Header>
       <DataRow>
         <ContactInfo>
@@ -88,7 +89,7 @@ const Container = styled.div`
   justify-content: center;
   flex-flow: column;
   padding: 0 2rem;
-  background: #111;
+  background: ${(props) => props.theme.default.background};
   @media (max-width: 981px) {
     margin-left: 0;
     padding: 0 2rem;
@@ -100,8 +101,8 @@ const Header = styled(H1)`
   margin: 0 6rem;
   font-size: 4rem;
   padding: 1rem;
-  border-bottom: 0.1rem solid #fff4;
-  color: #fff;
+  border-bottom: 0.1rem solid ${(props) => props.theme.default.border};
+  color: ${(props) => props.theme.default.color};
   @media (max-width: 480px) {
     margin: 0 3rem;
   }
@@ -121,7 +122,7 @@ const ContactInfo = styled.div`
 
 const Heading = styled(H3)`
   text-transform: uppercase;
-  color: #fff;
+  color: ${(props) => props.theme.default.color};
   font-size: 3rem;
   padding-bottom: 2rem;
 `;
@@ -137,10 +138,10 @@ const ContactData = styled(H3)`
   display: flex;
   align-items: center;
   font-size: 2rem;
-  color: #eee;
+  color: ${(props) => props.theme.default.heading};
   padding: 1rem 0;
   font-weight: normal;
-  text-transform: lowercase;
+  text-transform: none;
 `;
 
 const Form = styled.form`
@@ -156,8 +157,8 @@ const Form = styled.form`
 const Input = styled.input`
   padding: 1rem 0.5rem;
   margin: 1rem 0;
-  background: #3333;
-  color: #fff;
+  background: ${(props) => props.theme.default.inputBackground};
+  color: ${(props) => props.theme.default.color};
   text-transform: none;
   font-size: 1.7rem;
   width: 100%;
@@ -171,8 +172,8 @@ const Message = styled.textarea`
   resize: none;
   padding: 1rem 0.5rem;
   margin: 1rem 0;
-  background: #3333;
-  color: #fff;
+  background: ${(props) => props.theme.default.inputBackground};
+  color: ${(props) => props.theme.default.color};
   text-transform: non;
   font-size: 1.7rem;
   width: 100%;

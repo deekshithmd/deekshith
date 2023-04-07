@@ -66,8 +66,8 @@ const Header = styled(H1)`
   margin: 0 6rem;
   font-size: 4rem;
   padding: 1rem;
-  border-bottom: 0.1rem solid #fff4;
-  color: #fff;
+  border-bottom: 0.1rem solid ${(props) => props.theme.default.border};
+  color: ${(props) => props.theme.default.color};
   @media (max-width: 480px) {
     margin: 0 3rem;
   }
@@ -80,7 +80,7 @@ const Container = styled.div`
   justify-content: center;
   flex-flow: column;
   padding: 0 2rem;
-  background: #111;
+  background: ${(props) => props.theme.default.background};
   @media (max-width: 981px) {
     margin-left: 0;
     padding: 0 2rem;
@@ -89,7 +89,7 @@ const Container = styled.div`
 
 const Box = styled.div`
   width: 15rem;
-  background: #222;
+  background: ${(props) => props.theme.default.boxBackground};
   text-align: center;
   padding: 2rem;
   margin: 2rem;
@@ -114,13 +114,13 @@ const Info = styled.div`
 
 const Field = styled(H3)`
   font-size: 2rem;
-  color: #eee;
+  color: ${(props) => props.theme.default.heading};
   padding: 1rem 0;
   font-weight: normal;
 `;
 
 const FieldName = styled.span`
-  color: #f9ca24;
+  color: ${(props) => props.theme.default.selected};
   padding: 0 0.5rem;
 `;
 

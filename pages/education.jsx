@@ -1,9 +1,9 @@
-import styled from "styled-components";
+import styled, { useTheme } from "styled-components";
 import { H1, H3, Span } from "@/styles/SharedStyling";
-import Link from "next/link";
 import Image from "next/image";
 
 const Education = () => {
+  const theme = useTheme();
   const eductionData = [
     {
       year: 2022,
@@ -21,7 +21,7 @@ const Education = () => {
   return (
     <Container>
       <Header>
-        <span style={{ color: "#f9ca24" }}>My</span> Education
+        <span style={{ color: theme.default.selected }}>My</span> Education
       </Header>
       <BoxContainer>
         {eductionData.map((education, index) => {
@@ -53,7 +53,7 @@ const Container = styled.div`
   justify-content: center;
   flex-flow: column;
   padding: 0 2rem;
-  background: #111;
+  background: ${(props) => props.theme.default.background};
   @media (max-width: 981px) {
     margin-left: 0;
     padding: 0 2rem;
@@ -65,8 +65,8 @@ const Header = styled(H1)`
   margin: 0 6rem;
   font-size: 4rem;
   padding: 1rem;
-  border-bottom: 0.1rem solid #fff4;
-  color: #fff;
+  border-bottom: 0.1rem solid ${(props) => props.theme.default.border};
+  color: ${(props) => props.theme.default.color};
   @media (max-width: 480px) {
     margin: 0 3rem;
   }
@@ -85,7 +85,7 @@ const Box = styled.div`
   width: 27rem;
   margin: 4rem 1rem;
   padding-left: 4rem;
-  border-left: 0.2rem solid #fff;
+  border-left: 0.2rem solid ${(props) => props.theme.default.color};
   position: relative;
   @media (max-width: 480px) {
     width: 100%;
@@ -94,21 +94,21 @@ const Box = styled.div`
 
 const Year = styled(Span)`
   font-size: 1.3rem;
-  background: #222;
-  color: #fff;
+  background: ${(props) => props.theme.default.boxBackground};
+  color: ${(props) => props.theme.default.color};
   border-radius: 5rem;
   padding: 0.5rem 2.5rem;
 `;
 
 const Course = styled(H3)`
   font-size: 2rem;
-  color: #fff;
+  color: ${(props) => props.theme.default.color};
   padding-top: 1.5rem;
 `;
 
 const Description = styled.p`
   font-size: 1.4rem;
-  color: #eee;
+  color: ${(props) => props.theme.default.heading};
   padding: 1rem 0;
 `;
 
@@ -122,7 +122,7 @@ const ImageContainer = styled.div`
   display: fex;
   align-items: center;
   justify-content: center;
-  background: #f9ca24;
+  background: ${(props) => props.theme.default.selected};
 `;
 
 export default Education;
