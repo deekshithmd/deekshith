@@ -8,7 +8,6 @@ export const GlobalStyles = createGlobalStyle`
         text-decoration: none;
         outline: none;
         border: none;
-        text-transform: capitalize;
         transition: all .2s linear;
     };
     *::selection{

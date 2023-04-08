@@ -35,5 +35,6 @@ export const Button = styled.button`
     ${(props) => props.theme.default.boxInsetShadow};
   &:hover {
     background: ${(props) => props.theme.default.selected};
+    color: #fff;
   }
 `;

@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import styled, { useTheme } from "styled-components";
 import { H1, H3, Span, Button } from "@/styles/SharedStyling";
 import Link from "next/link";
@@ -13,19 +14,20 @@ const About = () => {
       </Header>
       <DataRow>
         <Info>
-          <Field>
-            <FieldName>name:</FieldName>Deekshith M D
-          </Field>
-          <Field>
-            <FieldName>age:</FieldName>24
-          </Field>
-          <Field>
-            <FieldName>qualification:</FieldName>B.E(CSE)
-          </Field>
-          <Field>
-            <FieldName>post:</FieldName>front end developer
-          </Field>
-          <Link href="/files/Deekshith_M_D.pdf" download>
+          <Description>
+            I'm a Frontend Developer located in India. I work on building Web
+            Applications specifically front end solutions for the web
+            aplications. I have a serious passion for UI develpoment and
+            creating intuitive, dynamic user experiences.
+          </Description>
+          <Description>
+            I started my web development journey back in 2021 and joined
+            neogCamp to learn front end development, there I learnt web
+            development by building various complex web applications using
+            ReactJS. Later I joined a web3 startup called Push Protocol and
+            working there as Front End Developer
+          </Description>
+          <DownloadItem href="file/Deekshith.pdf" download>
             <Button>
               Resume
               <Image
@@ -36,26 +38,8 @@ const About = () => {
                 style={{ padding: "0rem .5rem" }}
               />
             </Button>
-          </Link>
+          </DownloadItem>
         </Info>
-        <BoxContainer>
-          <Box>
-            <Span fontSize="4rem" color="#f9ca24">
-              2
-            </Span>
-            <H3 fontSize="2rem" color="#f9ca24">
-              Years of experience
-            </H3>
-          </Box>
-          <Box>
-            <Span fontSize="4rem" color="#f9ca24">
-              10+
-            </Span>
-            <H3 fontSize="2rem" color="#f9ca24">
-              Projects
-            </H3>
-          </Box>
-        </BoxContainer>
       </DataRow>
     </Container>
   );
@@ -113,16 +97,11 @@ const Info = styled.div`
   padding-left: 6rem;
 `;
 
-const Field = styled(H3)`
+const Description = styled(H3)`
   font-size: 2rem;
   color: ${(props) => props.theme.default.heading};
   padding: 1rem 0;
   font-weight: normal;
-`;
-
-const FieldName = styled.span`
-  color: ${(props) => props.theme.default.selected};
-  padding: 0 0.5rem;
 `;
 
 const BoxContainer = styled.div`
@@ -130,6 +109,10 @@ const BoxContainer = styled.div`
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+`;
+
+const DownloadItem = styled.a`
+  width: 100px;
 `;
 
 export default About;

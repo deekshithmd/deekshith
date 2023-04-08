@@ -3,13 +3,15 @@ import Image from "next/image";
 import styled, { useTheme } from "styled-components";
 import Link from "next/link";
 import { H3 } from "@/styles/SharedStyling";
+import { useRouter } from "next/router";
 
 export default function Navbar({ showMobileMenu, setShowMobileMenu }) {
   const theme = useTheme();
+  const router = useRouter();
   const paths = [
     { link: "/about", name: "About" },
     { link: "/projects", name: "Projects" },
-    { link: "/skills", name: "Skills" },
+    { link: "/skills", name: "My Skills" },
     { link: "/education", name: "Education" },
     { link: "/contact", name: "Contact" },
   ];
@@ -17,7 +19,7 @@ export default function Navbar({ showMobileMenu, setShowMobileMenu }) {
     <main>
       <HeaderContainer showMobileMenu={showMobileMenu}>
         <ProfileContainer>
-          <ProfileImage>
+          <ProfileImage onClick={() => router.push("/")}>
             <Image
               src="/assets/deekshith.png"
               alt="Profile"
@@ -85,6 +87,7 @@ const ProfileImage = styled.div`
   border: 0.7rem solid ${(props) => props.theme.default.selected};
   overflow: hidden;
   box-shadow: ${(props) => props.theme.default.profileShadow};
+  cursor: pointer;
 `;
 
 const Name = styled(H3)`
@@ -119,5 +122,6 @@ const MenuItem = styled(Link)`
   box-shadow: ${(props) => props.theme.default.boxShadow};
   &:hover {
     background: ${(props) => props.theme.default.selected};
+    color: #fff;
   }
 `;

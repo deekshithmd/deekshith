@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import Head from "next/head";
 import styled, { useTheme } from "styled-components";
 import { H1, H3, Button } from "@/styles/SharedStyling";
@@ -10,16 +11,14 @@ export default function Home() {
     <>
       <Head></Head>
       <Container>
-        <H3 fontSize="2.5rem" color={theme.default.color}>
-          Hi There...
+        <H3 fontSize="4rem" color={theme.default.color}>
+          Hi...
         </H3>
         <H1 fontSize="5rem" color={theme.default.color}>
-          I am <span style={{ color: "#f9ca24" }}>Deekshith M D</span>
+          I'am{" "}
+          <span style={{ color: theme.default.selected }}>Deekshith M D</span>
         </H1>
-        <Description>
-          I am a front end developer experienced in developing front end
-          solutions using HTML,CSS,Javascipt{" "}
-        </Description>
+        <Description>Front End Developer</Description>
         <Link href="/about">
           <Button>
             About Me
