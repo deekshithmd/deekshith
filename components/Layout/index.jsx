@@ -4,6 +4,8 @@ const Navbar = dynamic(() => import("../Navbar"), { ssr: false });
 import styled from "styled-components";
 import Image from "next/image";
 import { useTheme } from "@/contexts/ThemeContext";
+import { socialLinks } from "@/utils/constants";
+import Link from "next/link";
 
 const Layout = ({ children }) => {
   const { isDarkTheme, toggleTheme } = useTheme();
@@ -29,6 +31,20 @@ const Layout = ({ children }) => {
         alt="theme"
         onClick={() => toggleTheme()}
       />
+      <SocialMediaIcons>
+        {socialLinks.map((social) => {
+          return (
+            <SocialLink href={social.link} key={social.id} target="_blank">
+              <SocialIcon
+                src={social.image}
+                height={30}
+                width={30}
+                alt="icon"
+              />
+            </SocialLink>
+          );
+        })}
+      </SocialMediaIcons>
       {children}
     </Container>
   );
@@ -57,6 +73,32 @@ const ThemeIcon = styled(Image)`
   top: 2rem;
   right: 2rem;
   cursor: pointer; ;
+`;
+
+const SocialIcon = styled(Image)`
+  height: 3rem;
+  width: 3rem;
+`;
+const SocialLink = styled(Link)`
+  padding: 1rem;
+  &:hover {
+    background: #f0c871;
+  }
+`;
+
+const SocialMediaIcons = styled.div`
+  position: fixed;
+  z-index: 150;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: auto;
+  border-radius: 1rem 0rem 0rem 1rem;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  overflow: hidden;
 `;
 
 export default Layout;

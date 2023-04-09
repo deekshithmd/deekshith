@@ -1,6 +1,6 @@
 import React from "react";
 import styled, { useTheme } from "styled-components";
-import { H1, H3, Button } from "@/styles/SharedStyling";
+import { H1, H3, Button, Header } from "@/styles/SharedStyling";
 import Image from "next/image";
 import emailjs from "@emailjs/browser";
 
@@ -33,7 +33,7 @@ const Contact = () => {
   };
   return (
     <Container>
-      <Header>
+      <Header fontWeight="600">
         <span style={{ color: theme.default.selected }}>Contact</span> me
       </Header>
       <DataRow>
@@ -41,18 +41,18 @@ const Contact = () => {
           <Heading>Contact Info</Heading>
           <Info>
             <ContactData>
-              <Icon src="/assets/mail.png" height={30} width={30} alt="phone" />
+              <Icon src="/assets/mail.png" height={30} width={40} alt="phone" />
               deekshithmogra@gmail.com
             </ContactData>
             <ContactData>
-              <Icon src="/assets/phone.png" height={30} width={30} alt="mail" />
+              <Icon src="/assets/phone.png" height={30} width={40} alt="mail" />
               +917975507889
             </ContactData>
             <ContactData>
               <Icon
                 src="/assets/location.png"
                 height={30}
-                width={30}
+                width={40}
                 alt="location"
               />
               Mangaluru, Karnataka, India 574218
@@ -71,7 +71,7 @@ const Contact = () => {
             <Icon
               src="/assets/send.png"
               height={30}
-              width={30}
+              width={50}
               alt="mail"
               paddingleft="10px"
             />
@@ -96,17 +96,6 @@ const Container = styled.div`
   }
 `;
 
-const Header = styled(H1)`
-  text-align: center;
-  margin: 0 6rem;
-  font-size: 4rem;
-  padding: 1rem;
-  border-bottom: 0.1rem solid ${(props) => props.theme.default.border};
-  color: ${(props) => props.theme.default.color};
-  @media (max-width: 480px) {
-    margin: 0 3rem;
-  }
-`;
 const DataRow = styled.div`
   display: flex;
   align-items: center;

@@ -1,50 +1,14 @@
 import styled, { useTheme } from "styled-components";
-import { H1 } from "@/styles/SharedStyling";
+import { H3, Header } from "@/styles/SharedStyling";
 import Image from "next/image";
+import { skillSet } from "@/utils/constants";
 
 const Skills = () => {
   const theme = useTheme();
-  const skillSet = [
-    {
-      skill: "HTML",
-      image: "/assets/skills/html.png",
-    },
-    {
-      skill: "CSS",
-      image: "/assets/skills/css.png",
-    },
-    {
-      skill: "Javascript",
-      image: "/assets/skills/javascript.png",
-    },
-    {
-      skill: "ReactJS",
-      image: "/assets/skills/react.png",
-    },
-    {
-      skill: "NextJS",
-      image: "/assets/skills/nextjs.png",
-    },
-    {
-      skill: "Github",
-      image: "/assets/skills/github.png",
-    },
-    {
-      skill: "Material UI",
-      image: "/assets/skills/mui.png",
-    },
-    {
-      skill: "Firbase",
-      image: "/assets/skills/firebase.png",
-    },
-    {
-      skill: "Tailwind CSS",
-      image: "/assets/skills/tailwind.png",
-    },
-  ];
+
   return (
     <Container>
-      <Header>
+      <Header fontWeight="600">
         <span style={{ color: theme.default.selected }}>My</span> Skills
       </Header>
       <BoxContainer>
@@ -74,18 +38,6 @@ const Container = styled.div`
     padding: 0 2rem;
     padding-top: 10rem;
     min-height: 90vh;
-  }
-`;
-
-const Header = styled(H1)`
-  text-align: center;
-  margin: 0 6rem;
-  font-size: 4rem;
-  padding: 1rem;
-  border-bottom: 0.1rem solid ${(props) => props.theme.default.border};
-  color: ${(props) => props.theme.default.color};
-  @media (max-width: 480px) {
-    margin: 0 3rem;
   }
 `;
 

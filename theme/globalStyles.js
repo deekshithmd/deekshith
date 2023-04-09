@@ -2,13 +2,14 @@ import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyles = createGlobalStyle`
     * {
-        font-family: "Nunito", sans-serif;
+        font-family: 'Source Sans Pro', sans-serif;
         margin: 0;
         padding: 0;
         text-decoration: none;
         outline: none;
         border: none;
         transition: all .2s linear;
+        box-sizing: border-box;
     };
     *::selection{
         background:${({ theme }) => theme.default.selected};

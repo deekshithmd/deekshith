@@ -35,6 +35,6 @@ export const darkTheme = {
     boxShadow: "0px -1px 5px 0px rgba(153,151,153,1)",
     boxInsetShadow: "inset 0px -1px 5px 0px rgba(230,225,230,1)",
     projectCardBackground:
-      "radial-gradient(circle, rgba(112,48,238,1) 0%, rgba(70,252,247,1) 100%)",
+      "radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(149,148,148,1) 100%)",
   },
 };

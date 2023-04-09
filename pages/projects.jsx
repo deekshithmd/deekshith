@@ -1,66 +1,45 @@
 import styled, { useTheme } from "styled-components";
-import { H1, H3, Span, Button } from "@/styles/SharedStyling";
+import { H1, H3, Span, Button, Header } from "@/styles/SharedStyling";
 import Image from "next/image";
 import Link from "next/link";
+import { projects } from "@/utils/constants";
 
 const Projects = () => {
   const theme = useTheme();
   return (
     <Container>
-      <Header>
+      <Header fontWeight="600">
         <span style={{ color: theme.default.selected }}>My</span> Projects
       </Header>
       <BoxContainer>
-        <Box>
-          <ProjectImage
-            src="/assets/freshbuy.png"
-            width={300}
-            height={150}
-            alt="project"
-          />
-          <ProjectDetails>Details</ProjectDetails>
-        </Box>
-        <Box>
-          <ProjectImage
-            src="/assets/freshnote.png"
-            width={300}
-            height={150}
-            alt="project"
-          />
-          <ProjectDetails>Details</ProjectDetails>
-        </Box>
-        <Box>
-          <ProjectImage
-            src="/assets/freshquiz.png"
-            width={300}
-            height={150}
-            alt="project"
-          />
-          <ProjectDetails>Details</ProjectDetails>
-        </Box>
-        <Box>
-          <ImageContainer>
-            <ProjectImage
-              src="/assets/freshui.png"
-              width={300}
-              height={150}
-              alt="project"
-            />
-          </ImageContainer>
-          <ProjectDetails>
-            <ProjectContent>
-              <ProjectTitle>FreshUI</ProjectTitle>
-              <ProjectDescription>
-                This is a Component library similar to Bootstrap/Tailwind CSS
-                developed using pure CSS, HTML and javascript.
-              </ProjectDescription>
-              <ButtonContainer>
-                <LinkButton href="/">Project</LinkButton>
-                <LinkButton href="/">Source</LinkButton>
-              </ButtonContainer>
-            </ProjectContent>
-          </ProjectDetails>
-        </Box>
+        {projects.map((project) => {
+          return (
+            <Box key={project.id}>
+              <ProjectContent>
+                <ImageContainer>
+                  <ProjectImage
+                    src={project.image}
+                    width={300}
+                    height={150}
+                    alt="project"
+                  />
+                </ImageContainer>
+                <ProjectDetails>
+                  <ProjectTitle>{project.name}</ProjectTitle>
+                  <ProjectDescription>{project.description}</ProjectDescription>
+                  <ButtonContainer>
+                    <LinkButton href={project.project} target="_blank">
+                      Project
+                    </LinkButton>
+                    <LinkButton href={project.source} target="_blank">
+                      Source Code
+                    </LinkButton>
+                  </ButtonContainer>
+                </ProjectDetails>
+              </ProjectContent>
+            </Box>
+          );
+        })}
       </BoxContainer>
     </Container>
   );
@@ -80,18 +59,6 @@ const Container = styled.div`
   }
 `;
 
-const Header = styled(H1)`
-  text-align: center;
-  margin: 0 6rem;
-  font-size: 4rem;
-  padding: 1rem;
-  border-bottom: 0.1rem solid ${(props) => props.theme.default.border};
-  color: ${(props) => props.theme.default.color};
-  @media (max-width: 480px) {
-    margin: 0 3rem;
-  }
-`;
-
 const BoxContainer = styled.div`
   display: flex;
   align-items: center;
@@ -103,12 +70,15 @@ const BoxContainer = styled.div`
 const ProjectTitle = styled(H3)`
   font-size: 2rem;
   font-weight: 500;
+  color: ${(props) => props.theme.default.color};
 `;
 
 const ProjectDescription = styled(Span)`
   font-size: 1.5rem;
   font-weight: 400;
   width: 100%;
+  color: ${(props) => props.theme.default.color};
+  text-align: center;
 `;
 
 const ButtonContainer = styled.div`
@@ -123,9 +93,24 @@ const ProjectImage = styled(Image)`
 `;
 
 const LinkButton = styled(Link)`
-  font-size: 2rem;
-  padding: 1rem 1.5rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding: 0.5rem 1rem;
   border-radius: 2rem;
+  border: 1px solid #fff;
+  color: ${(props) => props.theme.default.color};
+  &:hover {
+    color: #fff;
+  }
+`;
+
+const ImageContainer = styled.div`
+  position: absolute;
+  z-index: 2;
+  backface-visibility: hidden;
+  box-sizing: border-box;
+  height: 15rem;
+  width: 30rem;
 `;
 
 const ProjectContent = styled.div`
@@ -134,21 +119,11 @@ const ProjectContent = styled.div`
   transform-style: preserve-3d;
 `;
 
-const Box = styled.div`
-  height: 15rem;
-  width: 30rem;
-  border-radius: 1rem;
-  margin: 2rem;
-  overflow: hidden;
-  cursor: pointer;
-  perspective: 1000px;
-  background-color: transparent;
-  &:hover ${ProjectContent} {
-    transform: rotateY(180deg);
-  }
-`;
-
 const ProjectDetails = styled.div`
+  position: absolute;
+  z-index: 1;
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
   height: 15rem;
   width: 30rem;
   box-sizing: border-box;
@@ -158,18 +133,20 @@ const ProjectDetails = styled.div`
   align-items: center;
   justify-content: space-between;
   background: ${(props) => props.theme.default.projectCardBackground};
-  position: absolute;
-  backface-visibility: hidden;
-  z-index: 1;
-  transform: rotateY(180deg);
 `;
 
-const ImageContainer = styled.div`
+const Box = styled.div`
   height: 15rem;
   width: 30rem;
-  position: absolute;
-  backface-visibility: hidden;
-  z-index: 2;
+  border-radius: 1rem;
+  margin: 2rem;
+  overflow: hidden;
+  cursor: pointer;
+  background-color: transparent;
+  perspective: 1000px;
+  &:hover ${ProjectContent} {
+    transform: rotateY(180deg);
+  }
 `;
 
 export default Projects;

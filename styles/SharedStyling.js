@@ -5,6 +5,7 @@ export const H1 = styled.h1`
   font-weight: ${(props) => props.fontWeight || "400"};
   color: ${(props) => props.color || "#000"};
   padding: ${(props) => props.padding || "0px"};
+  text-transform: ${(props) => props.textTransform || "none"};
 `;
 
 export const H3 = styled.h3`
@@ -12,6 +13,7 @@ export const H3 = styled.h3`
   font-weight: ${(props) => props.fontWeight || "400"};
   color: ${(props) => props.color || "#000"};
   padding: ${(props) => props.padding || "0px"};
+  text-transform: ${(props) => props.textTransform || "none"};
 `;
 
 export const Span = styled.span`
@@ -21,7 +23,7 @@ export const Span = styled.span`
 `;
 
 export const Button = styled.button`
-  padding: 0.7rem 3rem;
+  padding: ${(props) => props.padding || "0.7rem 3rem"};
   background: ${(props) => props.theme.default.secondaryBackground};
   color: ${(props) => props.theme.default.color};
   cursor: pointer;
@@ -36,5 +38,17 @@ export const Button = styled.button`
   &:hover {
     background: ${(props) => props.theme.default.selected};
     color: #fff;
+  }
+`;
+
+export const Header = styled(H1)`
+  text-align: center;
+  margin: 0 6rem;
+  font-size: 4rem;
+  padding: 1rem;
+  border-bottom: 0.1rem solid ${(props) => props.theme.default.border};
+  color: ${(props) => props.theme.default.color};
+  @media (max-width: 480px) {
+    margin: 0 3rem;
   }
 `;

@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import styled, { useTheme } from "styled-components";
-import { H1, H3, Span, Button } from "@/styles/SharedStyling";
+import { H1, H3, Span, Button, Header } from "@/styles/SharedStyling";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -9,7 +9,7 @@ const About = () => {
 
   return (
     <Container>
-      <Header>
+      <Header fontWeight="600">
         <span style={{ color: theme.default.selected }}>About</span> me
       </Header>
       <DataRow>
@@ -32,7 +32,7 @@ const About = () => {
               Resume
               <Image
                 src="/assets/download.png"
-                width={30}
+                width={40}
                 height={30}
                 alt="icon"
                 style={{ padding: "0rem .5rem" }}
@@ -44,18 +44,6 @@ const About = () => {
     </Container>
   );
 };
-
-const Header = styled(H1)`
-  text-align: center;
-  margin: 0 6rem;
-  font-size: 4rem;
-  padding: 1rem;
-  border-bottom: 0.1rem solid ${(props) => props.theme.default.border};
-  color: ${(props) => props.theme.default.color};
-  @media (max-width: 480px) {
-    margin: 0 3rem;
-  }
-`;
 
 const Container = styled.div`
   min-height: 100vh;

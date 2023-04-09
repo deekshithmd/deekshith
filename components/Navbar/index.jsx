@@ -12,7 +12,7 @@ export default function Navbar({ showMobileMenu, setShowMobileMenu }) {
     { link: "/about", name: "About" },
     { link: "/projects", name: "Projects" },
     { link: "/skills", name: "My Skills" },
-    { link: "/education", name: "Education" },
+    { link: "experience", name: "Experience" },
     { link: "/contact", name: "Contact" },
   ];
   return (
