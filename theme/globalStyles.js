@@ -13,7 +13,7 @@ export const GlobalStyles = createGlobalStyle`
     };
     *::selection{
         background:${({ theme }) => theme.default.selected};
-        color:#333;
+        color:#fff;
     };
     html{
         font-size:62.5%;

@@ -12,7 +12,8 @@ export default function Navbar({ showMobileMenu, setShowMobileMenu }) {
     { link: "/about", name: "About" },
     { link: "/projects", name: "Projects" },
     { link: "/skills", name: "My Skills" },
-    { link: "experience", name: "Experience" },
+    { link: "/experience", name: "Experience" },
+    { link: "/blogs", name: "Blogs" },
     { link: "/contact", name: "Contact" },
   ];
   return (
