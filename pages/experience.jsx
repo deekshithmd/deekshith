@@ -37,6 +37,7 @@ const Experience = () => {
                   </ShowIcon>
                 </InnerItem>
               </ExperienceTab>
+
               {experienceId == experience.id && (
                 <ExpereinceDetails>
                   <ExperienceData>{experience.description}</ExperienceData>
@@ -55,13 +56,6 @@ const Experience = () => {
   );
 };
 
-const ExperienceStack = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-`;
-
 const Technology = styled(Span)`
   padding: 0.5rem 1rem;
   border-radius: 2rem;
@@ -70,6 +64,13 @@ const Technology = styled(Span)`
   font-size: 1.5rem;
   forn-weight: 700;
   margin: 0 0.5rem 0.5rem 0;
+`;
+
+const ExperienceStack = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
 `;
 
 const ExperienceData = styled.p`
@@ -133,6 +134,24 @@ const Container = styled.div`
   }
 `;
 
+const ExperienceContainer = styled.div`
+  margin-bottom: 1rem;
+`;
+
+const ExperienceTab = styled.div`
+  position: relative;
+  z-index: 50;
+  width: 70rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: ${(props) => props.theme.default.selected};
+  padding: 1.5rem;
+  @media (max-width: 480px) {
+    width: 30rem;
+  }
+`;
+
 const Header = styled(H1)`
   text-align: center;
   margin: 0 6rem;
@@ -152,24 +171,6 @@ const BoxContainer = styled.div`
   flex-wrap: wrap;
   padding: 1rem 0;
   margin-top: 5rem;
-`;
-
-const ExperienceContainer = styled.div`
-  margin-bottom: 1rem;
-`;
-
-const ExperienceTab = styled.div`
-  position: relative;
-  z-index: 50;
-  width: 70rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: ${(props) => props.theme.default.selected};
-  padding: 1.5rem;
-  @media (max-width: 480px) {
-    width: 30rem;
-  }
 `;
 
 export default Experience;

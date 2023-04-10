@@ -15,7 +15,9 @@ const Skills = () => {
         {skillSet.map((skill, index) => {
           return (
             <Box key={index}>
-              <Image src={skill.image} width={70} height={70} alt="skill" />
+              <Pentagon>
+                <Image src={skill.image} width={70} height={70} alt="skill" />
+              </Pentagon>
             </Box>
           );
         })}
@@ -23,6 +25,20 @@ const Skills = () => {
     </Container>
   );
 };
+
+const Pentagon = styled.div`
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(235, 196, 86, 1) 100%
+  );
+  clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+`;
 
 const Container = styled.div`
   min-height: 100vh;

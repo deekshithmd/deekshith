@@ -59,6 +59,10 @@ export const skillSet = [
     image: "/assets/skills/javascript.svg",
   },
   {
+    skill: "Typescript",
+    image: "/assets/skills/typescript.svg",
+  },
+  {
     skill: "ReactJS",
     image: "/assets/skills/reactjs.svg",
   },
@@ -75,16 +79,32 @@ export const skillSet = [
     image: "/assets/skills/git.svg",
   },
   {
+    skill: "Styled Components",
+    image: "/assets/skills/styled-components.png",
+  },
+  {
     skill: "Material UI",
     image: "/assets/skills/mui.svg",
   },
   {
-    skill: "Firbase",
-    image: "/assets/skills/firebase.svg",
-  },
-  {
     skill: "Tailwind CSS",
     image: "/assets/skills/tailwindcss.svg",
+  },
+  {
+    skill: "SASS",
+    image: "/assets/skills/sass.svg",
+  },
+  {
+    skill: "Wepack",
+    image: "/assets/skills/webpack.svg",
+  },
+  {
+    skill: "Babel",
+    image: "/assets/skills/babel.svg",
+  },
+  {
+    skill: "Firebase",
+    image: "/assets/skills/firebase.svg",
   },
 ];
 
