@@ -142,7 +142,7 @@ export const experienceData = [
     role: "Front End Developer",
     company: "Push Protocol",
     description:
-      "I worked on various products of Push Protocol, I worked on implmenting new design of PushChat. Developed Analytics Dashboard of Push Protocol. Worked on Group chat feature of PushChat and also worked on implementing few small features ",
+      "I worked on various products of Push Protocol, Implmented new design of PushChat. Developed Analytics Dashboard of Push Protocol. Worked on Group chat feature of PushChat and also worked on implementing few small features ",
     skills: [
       "HTML",
       "CSS",
@@ -151,6 +151,7 @@ export const experienceData = [
       "Styled-Components",
       "EtherJS",
       "NextJS",
+      "Husky",
     ],
   },
   {

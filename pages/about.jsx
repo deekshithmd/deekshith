@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import styled, { useTheme } from "styled-components";
-import { H1, H3, Span, Button, Header } from "@/styles/SharedStyling";
+import { H3, Button, Header, HeaderContainer } from "@/styles/SharedStyling";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -9,9 +9,11 @@ const About = () => {
 
   return (
     <Container>
-      <Header fontWeight="600">
-        <span style={{ color: theme.default.selected }}>About</span> me
-      </Header>
+      <HeaderContainer>
+        <Header fontWeight="600">
+          <span style={{ color: theme.default.selected }}>About</span> me
+        </Header>
+      </HeaderContainer>
       <DataRow>
         <Info>
           <Description>
@@ -51,23 +53,11 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   flex-flow: column;
-  padding: 0 2rem;
+  padding: 0 5rem;
   background: ${(props) => props.theme.default.background};
   @media (max-width: 981px) {
     margin-left: 0;
     padding: 0 2rem;
-  }
-`;
-
-const Box = styled.div`
-  width: 15rem;
-  background: ${(props) => props.theme.default.boxBackground};
-  text-align: center;
-  padding: 2rem;
-  margin: 2rem;
-  box-shadow: ${(props) => props.theme.default.boxInsetShadow};
-  @media (max-width: 480px) {
-    width: 100%;
   }
 `;
 
@@ -82,7 +72,6 @@ const DataRow = styled.div`
 const Info = styled.div`
   flex: 1 1 48rem;
   padding: 2rem 1rem;
-  padding-left: 6rem;
 `;
 
 const Description = styled(H3)`
@@ -90,13 +79,7 @@ const Description = styled(H3)`
   color: ${(props) => props.theme.default.heading};
   padding: 1rem 0;
   font-weight: normal;
-`;
-
-const BoxContainer = styled.div`
-  flex: 1 1 48rem;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  text-align: justify;
 `;
 
 const DownloadItem = styled.a`

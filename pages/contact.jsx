@@ -1,6 +1,6 @@
 import React from "react";
 import styled, { useTheme } from "styled-components";
-import { H1, H3, Button, Header } from "@/styles/SharedStyling";
+import { H3, Button, Header, HeaderContainer } from "@/styles/SharedStyling";
 import Image from "next/image";
 import emailjs from "@emailjs/browser";
 
@@ -33,9 +33,11 @@ const Contact = () => {
   };
   return (
     <Container>
-      <Header fontWeight="600">
-        <span style={{ color: theme.default.selected }}>Contact</span> me
-      </Header>
+      <HeaderContainer>
+        <Header fontWeight="600">
+          <span style={{ color: theme.default.selected }}>Contact</span> me
+        </Header>
+      </HeaderContainer>
       <DataRow>
         <ContactInfo>
           <Heading>Contact Info</Heading>
@@ -88,7 +90,7 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   flex-flow: column;
-  padding: 0 2rem;
+  padding: 0 5rem;
   background: ${(props) => props.theme.default.background};
   @media (max-width: 981px) {
     margin-left: 0;

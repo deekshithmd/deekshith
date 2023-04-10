@@ -2,7 +2,7 @@ export const lightTheme = {
   name: "light",
 
   default: {
-    selected: "#2915c2",
+    selected: "#02124f",
     background: "#d6d6c1",
     secondaryBackground: "#fff",
     sidebarBackground: "#ededda",
@@ -22,10 +22,10 @@ export const lightTheme = {
 export const darkTheme = {
   name: "dark",
   default: {
-    selected: "#f9ca24",
-    background: "#111",
+    selected: "#b88204",
+    background: "#110D2A",
     secondaryBackground: "#1a1a1a",
-    sidebarBackground: "#333",
+    sidebarBackground: "#0B0536",
     inputBackground: "#3333",
     boxBackground: "#222",
     color: "#fff",

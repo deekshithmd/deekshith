@@ -52,3 +52,16 @@ export const Header = styled(H1)`
     margin: 0 3rem;
   }
 `;
+
+export const HeaderContainer = styled.div`
+  width: 100%;
+  position: sticky;
+  top: 2rem;
+  background: ${(props) => props.theme.default.background};
+  z-index: 10;
+  @media (max-width: 480px) {
+    position: sticky;
+    top: 0rem;
+    z-index: 10;
+  }
+`;

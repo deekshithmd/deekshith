@@ -1,5 +1,5 @@
 import styled, { useTheme } from "styled-components";
-import { H1, H3, Span, Button, Header } from "@/styles/SharedStyling";
+import { H3, Span, Header, HeaderContainer } from "@/styles/SharedStyling";
 import Image from "next/image";
 import Link from "next/link";
 import { projects } from "@/utils/constants";
@@ -8,9 +8,11 @@ const Projects = () => {
   const theme = useTheme();
   return (
     <Container>
-      <Header fontWeight="600">
-        <span style={{ color: theme.default.selected }}>My</span> Projects
-      </Header>
+      <HeaderContainer>
+        <Header fontWeight="600">
+          <span style={{ color: theme.default.selected }}>My</span> Projects
+        </Header>
+      </HeaderContainer>
       <BoxContainer>
         {projects.map((project) => {
           return (
@@ -51,7 +53,7 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   flex-flow: column;
-  padding: 0 2rem;
+  padding: 0 5rem;
   background: ${(props) => props.theme.default.background};
   @media (max-width: 981px) {
     margin-left: 0;

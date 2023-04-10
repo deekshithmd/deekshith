@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled, { useTheme, keyframes } from "styled-components";
-import { H1, H3, Span } from "@/styles/SharedStyling";
+import { H1, H3, Span, Header, HeaderContainer } from "@/styles/SharedStyling";
 import { experienceData } from "@/utils/constants";
 
 const Experience = () => {
@@ -9,9 +9,11 @@ const Experience = () => {
 
   return (
     <Container>
-      <Header>
-        <span style={{ color: theme.default.selected }}>My</span> Experience
-      </Header>
+      <HeaderContainer>
+        <Header>
+          <span style={{ color: theme.default.selected }}>My</span> Experience
+        </Header>
+      </HeaderContainer>
       <BoxContainer>
         {experienceData.map((experience) => {
           return (
@@ -126,7 +128,7 @@ const Container = styled.div`
   display: flex;
   justify-content: flex-start;
   flex-flow: column;
-  padding: 0 2rem;
+  padding: 0 5rem;
   background: ${(props) => props.theme.default.background};
   @media (max-width: 981px) {
     margin-left: 0;
@@ -149,18 +151,6 @@ const ExperienceTab = styled.div`
   padding: 1.5rem;
   @media (max-width: 480px) {
     width: 30rem;
-  }
-`;
-
-const Header = styled(H1)`
-  text-align: center;
-  margin: 0 6rem;
-  font-size: 4rem;
-  padding: 1rem;
-  border-bottom: 0.1rem solid ${(props) => props.theme.default.border};
-  color: ${(props) => props.theme.default.color};
-  @media (max-width: 480px) {
-    margin: 0 3rem;
   }
 `;
 

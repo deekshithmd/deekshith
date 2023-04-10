@@ -1,5 +1,5 @@
 import styled, { useTheme } from "styled-components";
-import { H3, Header } from "@/styles/SharedStyling";
+import { Header, HeaderContainer } from "@/styles/SharedStyling";
 import Image from "next/image";
 import { skillSet } from "@/utils/constants";
 
@@ -8,9 +8,11 @@ const Skills = () => {
 
   return (
     <Container>
-      <Header fontWeight="600">
-        <span style={{ color: theme.default.selected }}>My</span> Skills
-      </Header>
+      <HeaderContainer>
+        <Header fontWeight="600">
+          <span style={{ color: theme.default.selected }}>My</span> Skills
+        </Header>
+      </HeaderContainer>
       <BoxContainer>
         {skillSet.map((skill, index) => {
           return (
@@ -46,13 +48,12 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   flex-flow: column;
-  padding: 0 2rem;
+  padding: 0 5rem;
   background: ${(props) => props.theme.default.background};
   @media (max-width: 981px) {
     justify-content: flex-start;
     margin-left: 0;
     padding: 0 2rem;
-    padding-top: 10rem;
     min-height: 90vh;
   }
 `;
