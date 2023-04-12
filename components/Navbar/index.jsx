@@ -17,36 +17,34 @@ export default function Navbar({ showMobileMenu, setShowMobileMenu }) {
     { link: "/contact", name: "Contact" },
   ];
   return (
-    <main>
-      <HeaderContainer showMobileMenu={showMobileMenu}>
-        <ProfileContainer>
-          <ProfileImage onClick={() => router.push("/")}>
-            <Image
-              src="/assets/deekshith.png"
-              alt="Profile"
-              layout="fill"
-              objectFit="contain"
-            />
-          </ProfileImage>
-          <Name>Deekshith M D</Name>
-          <Post>Front End Developer</Post>
-        </ProfileContainer>
-        <NavigationBar>
-          <ListContainer>
-            {paths.map((item, index) => {
-              return (
-                <ListItem
-                  key={index}
-                  onClick={() => setShowMobileMenu(!showMobileMenu)}
-                >
-                  <MenuItem href={item.link}>{item.name}</MenuItem>
-                </ListItem>
-              );
-            })}
-          </ListContainer>
-        </NavigationBar>
-      </HeaderContainer>
-    </main>
+    <HeaderContainer showMobileMenu={showMobileMenu}>
+      <ProfileContainer>
+        <ProfileImage onClick={() => router.push("/")}>
+          <Image
+            src="/assets/deekshith.png"
+            alt="Profile"
+            layout="fill"
+            objectFit="contain"
+          />
+        </ProfileImage>
+        <Name>Deekshith M D</Name>
+        <Post>Front End Developer</Post>
+      </ProfileContainer>
+      <NavigationBar>
+        <ListContainer>
+          {paths.map((item, index) => {
+            return (
+              <ListItem
+                key={index}
+                onClick={() => setShowMobileMenu(!showMobileMenu)}
+              >
+                <MenuItem href={item.link}>{item.name}</MenuItem>
+              </ListItem>
+            );
+          })}
+        </ListContainer>
+      </NavigationBar>
+    </HeaderContainer>
   );
 }
 
@@ -55,14 +53,16 @@ const HeaderContainer = styled.header`
   top: 0;
   left: 0;
   z-index: 100;
-  height: 100%;
+  max-height: 100vh;
+  overflow-y: auto;
   width: 35rem;
   background: ${(props) => props.theme.default.sidebarBackground};
   display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-flow: column;
+  flex-direction: column;
   text-align: center;
+  &::-webkit-scrollbar {
+    width: 0rem;
+  }
   @media (max-width: 981px) {
     left: ${(props) => (props.showMobileMenu ? "0" : " -120%")};
     transition: all 0.5s;
@@ -77,6 +77,7 @@ const ProfileContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 2rem;
 `;
 
 const ProfileImage = styled.div`
