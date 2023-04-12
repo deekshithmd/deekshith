@@ -142,7 +142,7 @@ const ExperienceContainer = styled.div`
 
 const ExperienceTab = styled.div`
   position: relative;
-  z-index: 50;
+  z-index: 9;
   width: 70rem;
   display: flex;
   justify-content: space-between;
