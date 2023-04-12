@@ -11,7 +11,7 @@ export default function Navbar({ showMobileMenu, setShowMobileMenu }) {
   const paths = [
     { link: "/about", name: "About" },
     { link: "/projects", name: "Projects" },
-    { link: "/skills", name: "My Skills" },
+    { link: "/skills", name: "Skills" },
     { link: "/experience", name: "Experience" },
     { link: "/blogs", name: "Blogs" },
     { link: "/contact", name: "Contact" },
@@ -53,6 +53,7 @@ const HeaderContainer = styled.header`
   top: 0;
   left: 0;
   z-index: 100;
+  min-height: 100vh;
   max-height: 100vh;
   overflow-y: auto;
   width: 35rem;

@@ -160,7 +160,7 @@ export const experienceData = [
     role: "Front End Developer Trainee",
     company: "neogCamp",
     description:
-      "I started my web deveopment journey in this bootcamp, Here I leant ReactJS and developed 5 projects using varius web technologies",
+      "I started my web deveopment journey in this bootcamp. Here I leant ReactJS and developed 5 projects using various web technologies.",
     skills: [
       "HTML",
       "CSS",

@@ -104,6 +104,7 @@ const Container = styled.div`
   @media (max-width: 981px) {
     margin-left: 0;
     padding: 0 2rem;
+    justify-content: flex-start;
   }
 `;
 

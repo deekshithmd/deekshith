@@ -83,9 +83,18 @@ const ExperienceData = styled.p`
   margin-bottom: 1rem;
 `;
 
-const animationSet = keyframes`
+const animationSet1 = keyframes`
     0% {
         transform: translateY(-50%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+`;
+
+const animationSet2 = keyframes`
+    0% {
+        transform: translateY(-30%);
     }
     100% {
         transform: translateY(0);
@@ -100,12 +109,14 @@ const ExpereinceDetails = styled.div`
   justify-content: flex-start;
   align-items: flex-start;
   padding: 1.5rem;
-  margin: 1rem 0;
-  animation-name: ${animationSet};
+  animation-name: ${animationSet1};
   animation-duration: 2s;
   animation-iteration-count: 1;
+  margin: 1rem 0;
   @media (max-width: 480px) {
     width: 30rem;
+    animation-name: ${animationSet2};
+    animation-duration: 1s;
   }
 `;
 
@@ -124,15 +135,15 @@ const ShowIcon = styled(H1)`
 const Container = styled.div`
   min-height: 100vh;
   margin-left: 35rem;
-  margin-top: 10rem;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   flex-flow: column;
   padding: 0 5rem;
   background: ${(props) => props.theme.default.background};
   @media (max-width: 981px) {
     margin-left: 0;
     padding: 0 2rem;
+    justify-content: flex-start;
   }
 `;
 

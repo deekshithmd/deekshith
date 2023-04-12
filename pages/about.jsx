@@ -51,13 +51,14 @@ const Container = styled.div`
   min-height: 100vh;
   margin-left: 35rem;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  flex-flow: column;
   padding: 0 5rem;
   background: ${(props) => props.theme.default.background};
   @media (max-width: 981px) {
     margin-left: 0;
     padding: 0 2rem;
+    justify-content: flex-start;
   }
 `;
 

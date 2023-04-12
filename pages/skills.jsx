@@ -55,6 +55,7 @@ const Container = styled.div`
     margin-left: 0;
     padding: 0 2rem;
     min-height: 90vh;
+    justify-content: flex-start;
   }
 `;
 
