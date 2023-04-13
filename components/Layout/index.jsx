@@ -25,7 +25,7 @@ const Layout = ({ children }) => {
         />
       </MenuContainer>
       <ThemeIcon
-        src={isDarkTheme ? "/assets/sun.svg" : "/assets/moon.png"}
+        src={isDarkTheme ? "/assets/sun.svg" : "/assets/moon.svg"}
         height={30}
         width={30}
         alt="theme"

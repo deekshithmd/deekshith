@@ -43,18 +43,18 @@ const Contact = () => {
           <Heading>Contact Info</Heading>
           <Info>
             <ContactData>
-              <Icon src="/assets/mail.png" height={30} width={40} alt="phone" />
+              <Icon src="/assets/mail.svg" height={30} width={50} alt="phone" />
               deekshithmogra@gmail.com
             </ContactData>
             <ContactData>
-              <Icon src="/assets/phone.png" height={30} width={40} alt="mail" />
+              <Icon src="/assets/phone.svg" height={30} width={50} alt="mail" />
               +917975507889
             </ContactData>
             <ContactData>
               <Icon
-                src="/assets/location.png"
+                src="/assets/location.svg"
                 height={30}
-                width={40}
+                width={50}
                 alt="location"
               />
               Mangaluru, Karnataka, India 574218
@@ -66,12 +66,12 @@ const Contact = () => {
 
           <Input type="email" placeholder="email" id="email" />
 
-          <Message id="message" cols="30" rows="10" placeholder="messaage" />
+          <Message id="message" cols="30" rows="10" placeholder="Messaage" />
 
           <Button type="submit">
             Send
             <Icon
-              src="/assets/send.png"
+              src="/assets/send.svg"
               height={30}
               width={50}
               alt="mail"
