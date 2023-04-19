@@ -18,7 +18,7 @@ const Layout = ({ children }) => {
       />
       <MenuContainer onClick={() => setShowMobileMenu(!showMobileMenu)}>
         <Image
-          src={showMobileMenu ? "/assets/close.png" : "/assets/menu.png"}
+          src={showMobileMenu ? "/assets/close.svg" : "/assets/menu.svg"}
           height={30}
           width={30}
           alt="menu"

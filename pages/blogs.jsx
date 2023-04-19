@@ -3,16 +3,20 @@ import styled, { useTheme } from "styled-components";
 import { H3, Header, HeaderContainer } from "@/styles/SharedStyling";
 import Link from "next/link";
 import Image from "next/image";
+import { Puff } from "react-loader-spinner";
 
 const About = () => {
   const [blogs, setBlogs] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   const theme = useTheme();
 
   useEffect(() => {
     (async () => {
+      setLoading(true);
       const articles = await fetchBlogs();
       setBlogs(articles);
+      setLoading(false);
     })();
   }, []);
 
@@ -72,23 +76,38 @@ const About = () => {
           <span style={{ color: theme.default.selected }}>My</span> Blogs
         </Header>
       </HeaderContainer>
-      <BlogContainer>
-        {blogs.map((blog, index) => {
-          return (
-            <BlogCard key={index}>
-              <Link href="https://deekshithmd.hashnode.dev/" target="_blank">
-                <Image
-                  src={blog.coverImage}
-                  width={400}
-                  height={200}
-                  alt="blog"
-                />
-                <Description>{blog.title}</Description>
-              </Link>
-            </BlogCard>
-          );
-        })}
-      </BlogContainer>
+      {loading ? (
+        <LoaderContainer>
+          <Puff
+            height="80"
+            width="80"
+            radius={1}
+            color={theme.default.selected}
+            ariaLabel="puff-loading"
+            wrapperStyle={{}}
+            wrapperClass=""
+            visible={true}
+          />
+        </LoaderContainer>
+      ) : (
+        <BlogContainer>
+          {blogs.map((blog, index) => {
+            return (
+              <BlogCard key={index}>
+                <Link href="https://deekshithmd.hashnode.dev/" target="_blank">
+                  <Image
+                    src={blog.coverImage}
+                    width={400}
+                    height={200}
+                    alt="blog"
+                  />
+                  <Description>{blog.title}</Description>
+                </Link>
+              </BlogCard>
+            );
+          })}
+        </BlogContainer>
+      )}
     </Container>
   );
 };
@@ -135,6 +154,14 @@ const Description = styled(H3)`
   padding: 1rem;
   font-weight: 700;
   text-align: justify;
+`;
+
+const LoaderContainer = styled.div`
+  min-height: 80vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 export default About;
