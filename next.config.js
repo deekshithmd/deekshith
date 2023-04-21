@@ -8,7 +8,6 @@ const nextConfig = {
   images: {
     domains: ["cdn.hashnode.com"],
   },
-  assetPrefix: "/deekshith/",
 };
 
 module.exports = nextConfig;
