@@ -7,7 +7,10 @@ const nextConfig = {
   },
   images: {
     domains: ["cdn.hashnode.com"],
+    loader: "akamai",
+    path: "",
   },
+  assetPrefix: "./",
 };
 
 module.exports = nextConfig;
