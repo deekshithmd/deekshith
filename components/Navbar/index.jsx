@@ -21,7 +21,7 @@ export default function Navbar({ showMobileMenu, setShowMobileMenu }) {
       <ProfileContainer>
         <ProfileImage onClick={() => router.push("/")}>
           <Image
-            src="/deekshith/assets/deekshith.png"
+            src={`${process.env.ASSET_PATH}/assets/deekshith.png`}
             alt="Profile"
             layout="fill"
             objectFit="contain"
