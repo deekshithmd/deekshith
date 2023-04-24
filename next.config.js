@@ -5,7 +5,7 @@ const pathPrefix = process.env.NODE_ENV === "production" ? "/deekshith" : "";
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  basePath: pathPrefix,
+  basePath: "/deekshith",
   devIndicators: {
     buildActivity: false,
   },
