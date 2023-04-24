@@ -3,6 +3,7 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
+  assetPrefix: "deekshith",
   devIndicators: {
     buildActivity: false,
   },
