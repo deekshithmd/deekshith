@@ -7,6 +7,8 @@ const nextConfig = {
     buildActivity: false,
   },
   images: {
+    loader: "akamai",
+    path: "/",
     domains: ["cdn.hashnode.com"],
   },
 };
