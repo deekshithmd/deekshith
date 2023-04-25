@@ -4,6 +4,7 @@ import styled, { useTheme } from "styled-components";
 import Link from "next/link";
 import { H3 } from "@/styles/SharedStyling";
 import { useRouter } from "next/router";
+import Deekshith from "../../public/assets/deekshith.png";
 
 export default function Navbar({ showMobileMenu, setShowMobileMenu }) {
   const theme = useTheme();
@@ -21,7 +22,7 @@ export default function Navbar({ showMobileMenu, setShowMobileMenu }) {
       <ProfileContainer>
         <ProfileImage onClick={() => router.push("/")}>
           <Image
-            src={`/assets/deekshith.png`}
+            src={Deekshith}
             alt="Profile"
             layout="fill"
             objectFit="contain"
