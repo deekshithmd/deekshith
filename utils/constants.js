@@ -43,6 +43,14 @@ export const projects = [
     source: "https://github.com/deekshithmd/freshnote/tree/dev",
     project: "https://freshnote.netlify.app/",
   },
+  {
+    id: 6,
+    name: "Todo App",
+    description: "This is a Fully functional Todo App using localstorage along with Authentication",
+    image: "/assets/projects/todo-app.png",
+    source: "https://github.com/deekshithmd/todo-app-assignment",
+    project: "https://todo-app-assignment-weld.vercel.app/",
+  },
 ];
 
 export const skillSet = [
