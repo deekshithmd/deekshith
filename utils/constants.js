@@ -150,7 +150,7 @@ export const experienceData = [
     role: "Front End Developer",
     company: "Push Protocol",
     description:
-      "I worked on various products of Push Protocol, Implmented new design of PushChat. Developed Analytics Dashboard of Push Protocol. Worked on Group chat feature of PushChat and also worked on implementing few small features ",
+      "Worked on implmenting updated new design of PushChat. Developed Analytics Dashboard of Push Protocol containing graphs and admin panel to update data using NextJS. Worked on group chat feature of PushChat and video call feature of Push Chat, also involved in the development of Blog feature and BRB Campaign landing page on Push website.",
     skills: [
       "HTML",
       "CSS",
@@ -168,7 +168,7 @@ export const experienceData = [
     role: "Front End Developer Trainee",
     company: "neogCamp",
     description:
-      "I started my web deveopment journey in this bootcamp. Here I leant ReactJS and developed 5 projects using various web technologies.",
+      "I started my web deveopment journey in this bootcamp. Here I leant ReactJS and developed 5 projects using different web technologies.",
     skills: [
       "HTML",
       "CSS",
