@@ -19,15 +19,16 @@ const About = () => {
           <Description>
             I'm a Frontend Developer located in India. I work on building Web
             Applications specifically front end solutions for the web
-            aplications. I have a serious passion for UI develpoment and
+            applications. I have a serious passion for UI develpoment and
             creating intuitive, dynamic user experiences.
           </Description>
           <Description>
             I started my web development journey back in 2021 and joined
             neogCamp to learn front end development, there I learnt web
             development by building various complex web applications using
-            ReactJS. Later I joined a web3 startup called Push Protocol and
-            working there as Front End Developer
+            ReactJS. Later I joined a web3 startup Push Protocol as a
+            Front End Developer, here I worked on multiple products of Push
+            Protocol like PushChat(chat, group chat and video call), Analytics Dashboard and Push website.
           </Description>
           <DownloadItem href="file/Deekshith.pdf" download>
             <Button>
@@ -84,7 +85,7 @@ const Description = styled(H3)`
 `;
 
 const DownloadItem = styled.a`
-  width: 100px;
+  max-width: 50px;
 `;
 
 export default About;
