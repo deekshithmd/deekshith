@@ -51,6 +51,14 @@ export const projects = [
     source: "https://github.com/deekshithmd/todo-app-assignment",
     project: "https://todo-app-assignment-weld.vercel.app/",
   },
+  {
+    id: 7,
+    name: "SOP Generation Tool",
+    description: "This is a Fullstack app which generates statement of purpose based on candidate data and sends email with his data and SOP pdf",
+    image: "/assets/projects/sop-tool.png",
+    source: "https://github.com/deekshithmd/sop-generation-tool",
+    project: "https://sop-generation-tool.vercel.app/",
+  }
 ];
 
 export const skillSet = [
