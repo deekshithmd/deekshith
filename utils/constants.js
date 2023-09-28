@@ -58,7 +58,16 @@ export const projects = [
     image: "/assets/projects/sop-tool.png",
     source: "https://github.com/deekshithmd/sop-generation-tool",
     project: "https://sop-generation-tool.vercel.app/",
+  },
+  {
+    id: 8,
+    name: "Image Annotation Tool",
+    description: "This is a tool using which you can create annotation on the provided image",
+    image: "/assets/projects/annotation-tool.png",
+    source: "https://github.com/deekshithmd/image-annotation",
+    project: "https://image-annotation-ten.vercel.app/",
   }
+
 ];
 
 export const skillSet = [
