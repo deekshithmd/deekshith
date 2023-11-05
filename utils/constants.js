@@ -45,16 +45,18 @@ export const projects = [
   },
   {
     id: 6,
-    name: "Todo App",
-    description: "This is a Fully functional Todo App using localstorage along with Authentication",
+    name: "Task Management App",
+    description:
+      "This is a Full Stack Task Management Application using ReactJS, NodeJS, ExpressJS and MongoDB",
     image: "/assets/projects/todo-app.png",
-    source: "https://github.com/deekshithmd/todo-app-assignment",
-    project: "https://todo-app-assignment-weld.vercel.app/",
+    source: "https://github.com/deekshithmd/task-management-system",
+    project: "https://task-management-system-ochre.vercel.app",
   },
   {
     id: 7,
     name: "SOP Generation Tool",
-    description: "This is a Fullstack app which generates statement of purpose based on candidate data and sends email with his data and SOP pdf",
+    description:
+      "This is a Fullstack app which generates statement of purpose based on candidate data and sends email with his data and SOP pdf",
     image: "/assets/projects/sop-tool.png",
     source: "https://github.com/deekshithmd/sop-generation-tool",
     project: "https://sop-generation-tool.vercel.app/",
@@ -62,12 +64,12 @@ export const projects = [
   {
     id: 8,
     name: "Image Annotation Tool",
-    description: "This is a tool using which you can create annotation on the provided image",
+    description:
+      "This is a tool using which you can create annotation on the provided image",
     image: "/assets/projects/annotation-tool.png",
     source: "https://github.com/deekshithmd/image-annotation",
     project: "https://image-annotation-ten.vercel.app/",
-  }
-
+  },
 ];
 
 export const skillSet = [
