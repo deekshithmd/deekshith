@@ -4,6 +4,7 @@ import { H3, Header, HeaderContainer } from "@/styles/SharedStyling";
 import Link from "next/link";
 import Image from "next/image";
 import { Puff } from "react-loader-spinner";
+import Blog from '../public/assets/blog.jpg'
 
 const About = () => {
   const [blogs, setBlogs] = useState([]);
@@ -21,20 +22,23 @@ const About = () => {
   }, []);
 
   const GET_USER_BLOGS = `
-    query GetUserArticles($page: Int!) {
-        user(username: "Deekshith") {
-            publication {
-                posts(page: $page) {
-                  title
-                  brief
-                  slug
-                  dateAdded
-                  coverImage
-                  contentMarkdown
-                }
+  query Publication {
+    publication(host: "deekshithmd.hashnode.dev/") {
+      posts(first: 20) {
+        edges {
+          node {
+            title
+            brief
+            url,
+            slug,
+            coverImage{
+              url
             }
+          }
         }
+      }
     }
+  }
 `;
 
   const fetchBlogs = async () => {
@@ -42,20 +46,21 @@ const About = () => {
     let page = 0;
     const articles = [];
 
-    while (!allBlogsFetched) {
+    // while (!allBlogsFetched) {
       let response = await gql(GET_USER_BLOGS, { page: page });
-      articles.push(...response.data.user.publication.posts);
-      if (response.data.user.publication.posts.length === 0) {
-        allBlogsFetched = true;
-      }
+      console.log('res',response?.data?.publication?.posts?.edges)
+      articles.push(...response?.data?.publication?.posts?.edges);
+    //   if (response?.data?.publication?.posts?.edges?.length === 0) {
+    //     allBlogsFetched = true;
+    //   }
 
-      page++;
-    }
+    //   page++;
+    // }
     return articles;
   };
 
   async function gql(query, variables = {}) {
-    const data = await fetch("https://api.hashnode.com/", {
+    const data = await fetch(" https://gql.hashnode.com.", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -96,12 +101,12 @@ const About = () => {
               <BlogCard key={index}>
                 <Link href="https://deekshithmd.hashnode.dev/" target="_blank">
                   <Image
-                    src={blog.coverImage}
+                    src={blog.coverImage || Blog}
                     width={400}
                     height={200}
                     alt="blog"
                   />
-                  <Description>{blog.title}</Description>
+                  <Description>{blog?.node?.title}</Description>
                 </Link>
               </BlogCard>
             );

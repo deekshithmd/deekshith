@@ -165,7 +165,24 @@ export const socialLinks = [
 export const experienceData = [
   {
     id: 1,
-    duration: "2022-Present",
+    duration: "2023-Present",
+    role: "Front End Developer",
+    company: "Engineering Square",
+    description:
+      "I have developed the test creation and test taking(assesment) platform which consists of mcq, text input, video response and coding questions, integrated AI capability for some of the features like job creation and candidate onboarding flow, also I have worked on improving the performance of the application.",
+    skills: [
+      "HTML",
+      "CSS",
+      "Javascript",
+      "ReactJS",
+      "TailwindCSS",
+      "NextJS",
+      "AWS"
+    ],
+  },
+  {
+    id: 2,
+    duration: "2022-2023",
     role: "Front End Developer",
     company: "Push Protocol",
     description:
@@ -182,7 +199,7 @@ export const experienceData = [
     ],
   },
   {
-    id: 2,
+    id: 3,
     duration: "2021-2022",
     role: "Front End Developer Trainee",
     company: "neogCamp",
@@ -203,7 +220,7 @@ export const experienceData = [
   },
 
   {
-    id: 3,
+    id: 4,
     duration: "2021-2022",
     role: "Project Engineer",
     company: "Wipro Limited",

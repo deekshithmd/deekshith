@@ -1,7 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import styled, { useTheme } from "styled-components";
 import { H3, Button, Header, HeaderContainer } from "@/styles/SharedStyling";
-import Link from "next/link";
 import Image from "next/image";
 
 const About = () => {
@@ -17,18 +16,10 @@ const About = () => {
       <DataRow>
         <Info>
           <Description>
-            I'm a Frontend Developer located in India. I work on building Web
-            Applications specifically front end solutions for the web
-            applications. I have a serious passion for UI develpoment and
-            creating intuitive, dynamic user experiences.
+            I'm a Frontend Developer located in India. I have experience in building web applications specifically front end solutions for the web applications. I have a serious passion for UI develpoment and creating intuitive, dynamic user experiences.
           </Description>
           <Description>
-            I started my web development journey back in 2021 and joined
-            neogCamp to learn front end development, there I learnt web
-            development by building various complex web applications using
-            ReactJS. Later I joined a web3 startup Push Protocol as a
-            Front End Developer, here I worked on multiple products of Push
-            Protocol like PushChat(chat, group chat and video call), Analytics Dashboard and Push website.
+            I started my web development journey back in 2021 and joined neogCamp to learn front end development, there I learnt web development by building various complex web applications using ReactJS. Later I joined a web3 startup Push Protocol as a Front End Developer, here I worked on multiple products of Push Protocol like PushChat(chat, group chat and video call), Analytics Dashboard and Push website. Currently working as a frontend developer in Engineering Square a startup in Hyderabad, where we are working on end to end recruitment solution product, here I have developed the test creation and assesment platform which consists of mcq, text input, video response and coding questions, integrated AI capability for some of the features like job creation and candidate onboarding flow, also I have worked on improving the performance of the application.
           </Description>
           <DownloadItem href="file/Deekshith.pdf" download>
             <Button>
