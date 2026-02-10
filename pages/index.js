@@ -21,7 +21,7 @@ export default function Home() {
           <span style={{ color: theme.default.selected }}>Deekshith M D</span>
         </Heading>
         <Description>
-          A Front End Developer building front end solutions for websites and
+          A Frontend Engineer building front end solutions for websites and
           web applications using Javascript Techstack.
         </Description>
         <LinkContainer>

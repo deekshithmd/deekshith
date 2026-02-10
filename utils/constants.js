@@ -165,7 +165,27 @@ export const socialLinks = [
 export const experienceData = [
   {
     id: 1,
-    duration: "2023-Present",
+    duration: "2024-Present",
+    role: "Software Engineer - Frontend",
+    company: "Signeasy",
+    description:
+      "Owned and delivered multiple core frontend systems including repository management, global search, FTUX onboarding, growth experimentation frameworks, and API demo applications for a large-scale e-signature SaaS platform. Designed and implemented interactive API demos, built a Google Drive–like repository frontend with full CRUD operations and reusable Folder Manager components, led development of Slack-inspired Global Search, developed FTUX onboarding and guided tour flows, advanced file import pipelines with Google Drive, OneDrive, and Outlook GAB integrations, delivered growth and conversion experiments, contributed reusable Design System components, led frontend modernization, performance optimization, and instrumented analytics across Auth0 flows.",
+    skills: [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "ReactJS",
+      "TypeScript",
+      "TailwindCSS",
+      "Webpack",
+      "Mixpanel",
+      "Auth0"
+    ],
+  }
+  ,
+  {
+    id: 2,
+    duration: "2023-2024",
     role: "Front End Developer",
     company: "Engineering Square",
     description:
@@ -181,7 +201,7 @@ export const experienceData = [
     ],
   },
   {
-    id: 2,
+    id: 3,
     duration: "2022-2023",
     role: "Front End Developer",
     company: "Push Protocol",
@@ -199,7 +219,7 @@ export const experienceData = [
     ],
   },
   {
-    id: 3,
+    id: 4,
     duration: "2021-2022",
     role: "Front End Developer Trainee",
     company: "neogCamp",
@@ -220,7 +240,7 @@ export const experienceData = [
   },
 
   {
-    id: 4,
+    id: 5,
     duration: "2021-2022",
     role: "Project Engineer",
     company: "Wipro Limited",
